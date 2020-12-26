@@ -4,7 +4,7 @@ var path = require('path')
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 app.get('/', (req, res) => res.send('hello!'));
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', (socket) => {
     socket.on('username', (username) => {
